@@ -93,4 +93,4 @@ endif
 " Toggle NERDTree
 nmap <silent> <F2> :NERDTreeToggle<CR>
 " Set color scheme
-"colorscheme dracula
+colorscheme dracula
