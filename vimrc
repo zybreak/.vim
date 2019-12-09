@@ -38,6 +38,8 @@ set modelines=4
 set number
 " Enable syntax highlighting
 syntax on
+" Enable fold on syntax
+set foldmethod syntax
 " Highlight current line
 set cursorline
 " Make tabs as wide as four spaces
