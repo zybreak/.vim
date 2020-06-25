@@ -39,7 +39,8 @@ set number
 " Enable syntax highlighting
 syntax on
 " Enable fold on syntax
-set foldmethod syntax
+set foldmethod=syntax
+set foldlevelstart=20
 " Highlight current line
 set cursorline
 " Make tabs as wide as four spaces
@@ -87,7 +88,7 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " Automatic commands
 if has("autocmd")
 	" Enable file type detection
-	filetype on
+	filetype plugin indent on
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
@@ -96,3 +97,5 @@ endif
 nmap <silent> <F2> :NERDTreeToggle<CR>
 " Set color scheme
 colorscheme gruvbox
+"colorscheme dracula
+
