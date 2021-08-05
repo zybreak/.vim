@@ -14,3 +14,6 @@
 [submodule "bundle/vim-json"]
 	path = bundle/vim-json
 	url = https://github.com/elzr/vim-json.git
+[submodule "bundle/coc"]
+	path = bundle/coc
+	url = https://github.com/neoclide/coc.nvim
