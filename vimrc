@@ -1,8 +1,9 @@
 " Enable Plug
 call plug#begin()
-#Plug 'tpope/vim-sensible'
+" Plug 'tpope/vim-sensible'
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 " Make Vim more useful
 set nocompatible
