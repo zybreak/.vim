@@ -1,9 +1,13 @@
-" Enable Plug
+
 call plug#begin()
+Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Set background to dark
@@ -84,3 +88,12 @@ nmap <silent> <F2> :NERDTreeToggle<CR>
 colorscheme gruvbox
 "colorscheme dracula
 
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline_theme = 'base16_gruvbox_dark_hard'
+let g:airline_experimental = 1
+
+" go requires gopls, clangd requires clangd
+let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-go']
+
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
