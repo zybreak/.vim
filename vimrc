@@ -1,5 +1,9 @@
-" Enable pathogen
-execute pathogen#infect()
+" Enable Plug
+call plug#begin()
+#Plug 'tpope/vim-sensible'
+Plug 'preservim/nerdtree'
+Plug 'morhetz/gruvbox'
+call plug#end()
 " Make Vim more useful
 set nocompatible
 " Allow backspace in insert mode
