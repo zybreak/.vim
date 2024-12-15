@@ -1,20 +1,15 @@
 " Enable Plug
 call plug#begin()
-" Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible'
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
-" Make Vim more useful
-set nocompatible
-" Allow backspace in insert mode
-set backspace=indent,eol,start
+
 " Set background to dark
 set background=dark
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
-" Enhance command-line completion
-set wildmenu
 set wildmode=list:longest,full
 " Allow cursor keys in insert mode
 set esckeys
@@ -41,8 +36,6 @@ set modeline
 set modelines=4
 " Enable line numbers
 set number
-" Enable syntax highlighting
-syntax on
 " Enable fold on syntax
 set foldmethod=syntax
 set foldlevelstart=20
@@ -52,22 +45,17 @@ set cursorline
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set smarttab
 " Highlight searches
 set hlsearch
 " Ignore case of searches
 set ignorecase
-" Highlight dynamically as pattern is typed
-set incsearch
-" Always show status line
-set laststatus=2
 " Enable mouse in all modes
 set mouse=a
 " Disable error bells
 set noerrorbells
 " Don’t reset cursor to start of line when moving around.
 set nostartofline
-" Show the cursor position
-set ruler
 " Don’t show the intro message when starting Vim
 set shortmess=atI
 " Show the current mode
@@ -89,12 +77,6 @@ function! StripWhitespace()
 endfunction
 
 noremap <leader>ss :call StripWhitespace()<CR>
-
-" Automatic commands
-if has("autocmd")
-	" Enable file type detection
-	filetype plugin indent on
-endif
 
 " Toggle NERDTree
 nmap <silent> <F2> :NERDTreeToggle<CR>
