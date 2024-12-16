@@ -1,5 +1,6 @@
 
 call plug#begin()
+Plug 'sheerun/vim-polyglot'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
@@ -95,7 +96,7 @@ let g:airline_theme = 'base16_gruvbox_dark_hard'
 let g:airline_experimental = 1
 
 " go requires gopls, clangd requires clangd
-let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-go', 'coc-tag']
+let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-go', 'coc-tag', 'coc-lightbulb']
 
 " Use <cr> to confirm completion
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
