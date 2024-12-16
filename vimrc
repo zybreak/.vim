@@ -8,6 +8,8 @@ Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
 call plug#end()
 
 " Set background to dark
@@ -93,7 +95,10 @@ let g:airline_theme = 'base16_gruvbox_dark_hard'
 let g:airline_experimental = 1
 
 " go requires gopls, clangd requires clangd
-let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-go']
+let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-go', 'coc-tag']
 
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+
+" enable gtags module, requires gnu-global
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
