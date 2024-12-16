@@ -87,6 +87,11 @@ noremap <leader>ss :call StripWhitespace()<CR>
 
 " Toggle NERDTree
 nmap <silent> <F2> :NERDTreeToggle<CR>
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
 " Set color scheme
 colorscheme gruvbox
 "colorscheme dracula
@@ -94,6 +99,7 @@ colorscheme gruvbox
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_theme = 'base16_gruvbox_dark_hard'
 let g:airline_experimental = 1
+let g:airline_powerline_fonts = 1
 
 " go requires gopls, clangd requires clangd
 let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-go', 'coc-tag', 'coc-lightbulb']
