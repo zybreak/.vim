@@ -89,8 +89,10 @@ noremap <leader>ss :call StripWhitespace()<CR>
 nmap <silent> <F2> :NERDTreeToggle<CR>
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
-" Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
+" Start NERDTree and put the cursor back in the other window if a file was
+" specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 
 " Set color scheme
 colorscheme gruvbox
@@ -102,7 +104,7 @@ let g:airline_experimental = 1
 let g:airline_powerline_fonts = 1
 
 " go requires gopls, clangd requires clangd
-let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-go', 'coc-tag', 'coc-lightbulb']
+let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-go', 'coc-tag']
 
 " Use <cr> to confirm completion
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
@@ -116,6 +118,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gl <Plug>(coc-format)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call ShowDocumentation()<CR>

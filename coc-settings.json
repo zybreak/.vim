@@ -1,0 +1,7 @@
+{
+    "go.goplsOptions.hints.assignVariableTypes": true,
+    "go.goplsOptions.hints.parameterNames": true,
+    "go.goplsOptions.hints.functionTypes": true,
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextCurrentLineOnly": true
+}
