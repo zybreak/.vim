@@ -1,3 +1,5 @@
+" Some of the nerdtree / airline glyphs require a nerdfont installed, like
+" RobotoMono NerdFont.
 
 call plug#begin()
 Plug 'sheerun/vim-polyglot'
@@ -106,7 +108,7 @@ let g:airline_experimental = 1
 let g:airline_powerline_fonts = 1
 
 " go requires gopls, clangd requires clangd
-let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-go', 'coc-tag']
+let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-go', 'coc-tag', 'coc-vimlsp']
 
 " Use <cr> to confirm completion
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
@@ -143,4 +145,10 @@ set signcolumn=yes
 
 " enable gtags module, requires gnu-global
 let g:gutentags_modules = ['ctags', 'gtags_cscope']
+let g:gutentags_cache_dir = expand('~/.vim/cache/ctags/')
+let g:gutentags_generate_on_new = 1
+let g:gutentags_generate_on_missing = 1
+let g:gutentags_generate_on_write = 1
+let g:gutentags_generate_on_empty_buffer = 0
+
 
