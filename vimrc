@@ -1,11 +1,13 @@
 " Some of the nerdtree / airline glyphs require a nerdfont installed, like
 " RobotoMono NerdFont.
 
+" Call PlugInstall to install plugins listed below
 call plug#begin()
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
